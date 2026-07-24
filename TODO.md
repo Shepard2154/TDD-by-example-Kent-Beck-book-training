@@ -6,4 +6,6 @@
 - [x] equals()
 - [x] 5 CHF * 2 = 10 CHF
 - [x] Общие операции Dollar и Franc
-- [ ] Сравнение франков (Franc) и долларов (Dollar)
+- [x] Сравнение франков (Franc) и долларов (Dollar)
+- [x] Дублирование Dollar/Franc
+- [x] Валюта?

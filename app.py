@@ -25,10 +25,3 @@ class Money:
     def currency(self):
         return self._currency
 
-
-class Dollar(Money):
-    pass
-
-
-class Franc(Money):
-    pass

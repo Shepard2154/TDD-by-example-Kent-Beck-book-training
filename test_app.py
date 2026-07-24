@@ -10,8 +10,6 @@ def test_multiplication():
 def test_equality():
     assert Money.dollar(5) == Money.dollar(5)
     assert Money.dollar(5) != Money.dollar(6)
-    assert Money.franc(5) == Money.franc(5)
-    assert Money.franc(5) != Money.franc(6)
     assert Money.franc(5) != Money.dollar(5)
 
 
