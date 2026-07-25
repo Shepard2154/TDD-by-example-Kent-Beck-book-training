@@ -14,8 +14,8 @@ def test_equality():
 
 
 def test_currency():
-    assert('USD', Money.dollar(1).currency)
-    assert('CHF', Money.franc(1).currency)
+    assert 'USD' == Money.dollar(1).currency
+    assert 'CHF' == Money.franc(1).currency
 
 
 def test_simple_addition():
