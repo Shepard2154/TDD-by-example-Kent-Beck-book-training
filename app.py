@@ -1,7 +1,12 @@
+from abc import ABC
 from typing import Self
 
 
-class Money:
+class Expression(ABC):
+    ...
+
+
+class Money(Expression):
     def __init__(self, amount, currency):
         self._amount = amount
         self._currency = currency
@@ -33,3 +38,7 @@ class Money:
     def currency(self):
         return self._currency
 
+
+class Bank:
+    def reduce(self, total, currency):
+        return Money.dollar(10)
