@@ -9,6 +9,9 @@ class Money:
     def __mul__(self, multiplier):
         return Money(self.amount * multiplier, self.currency)
 
+    def __add__(self, other):
+        return Money(self.amount + other.amount, self.currency)
+
     @staticmethod
     def dollar(amount):
         return Money(amount, 'USD')
