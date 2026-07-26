@@ -20,10 +20,7 @@ def test_currency():
 
 def test_simple_addition():
     five = Money.dollar(5)
-    result = five + five
     bank = Bank()
-    reduced = bank.reduce(result, 'USD')
+    reduced = bank.exchange(five + five, 'USD')
     assert Money.dollar(10) == reduced
-
-
 

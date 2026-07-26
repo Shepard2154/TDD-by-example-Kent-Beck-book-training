@@ -2,11 +2,7 @@ from abc import ABC
 from typing import Self
 
 
-class Expression(ABC):
-    ...
-
-
-class Money(Expression):
+class Money:
     def __init__(self, amount, currency):
         self._amount = amount
         self._currency = currency
@@ -40,5 +36,22 @@ class Money(Expression):
 
 
 class Bank:
-    def reduce(self, total, currency):
-        return Money.dollar(10)
+    exchange_rate = {}
+
+    def add_rate(self, from_currency: str, to_currency: str, rate: float):
+        self.exchange_rate[(from_currency, to_currency,)] = rate
+
+    def exchange(
+        self,
+        source_money: Money,
+        target_currency: str,
+    ) -> Money:
+        if source_money.currency == target_currency:
+            return source_money
+        return Money(
+               source_money.amount * self.exchange_rate[
+                   (source_money.currency, target_currency,)
+                   ],
+               target_currency,
+
+        )
