@@ -24,3 +24,15 @@ def test_simple_addition():
     reduced = bank.exchange(five + five, 'USD')
     assert Money.dollar(10) == reduced
 
+
+def test_mixed_addition():
+    five = Money.dollar(5)
+    four = Money.franc(4)
+    bank = Bank()
+    bank.add_rate(
+         from_currency='CHF',
+         to_currency='USD',
+         rate=2
+    ) # 1 USD = 2 CHF
+    reduced = bank.exchange(four, 'USD') + five
+    assert Money.dollar(7) == reduced

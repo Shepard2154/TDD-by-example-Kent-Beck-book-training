@@ -38,7 +38,7 @@ class Money:
 class Bank:
     exchange_rate = {}
 
-    def add_rate(self, from_currency: str, to_currency: str, rate: float):
+    def add_rate(self, *, from_currency: str, to_currency: str, rate: float):
         self.exchange_rate[(from_currency, to_currency,)] = rate
 
     def exchange(
