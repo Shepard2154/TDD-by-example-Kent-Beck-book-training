@@ -32,7 +32,7 @@ def test_mixed_addition():
     bank.add_rate(
          from_currency='CHF',
          to_currency='USD',
-         rate=2
+         rate=0.5,
     ) # 1 USD = 2 CHF
     reduced = bank.exchange(four, 'USD') + five
     assert Money.dollar(7) == reduced

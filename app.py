@@ -1,4 +1,3 @@
-from abc import ABC
 from typing import Self
 
 
@@ -16,7 +15,15 @@ class Money:
         return Money(self.amount * multiplier, self.currency)
 
     def __add__(self, other: Self):
+        if self.currency != other.currency:
+            raise ValueError(
+                  "You can't add money in different currencies, "
+                  "go to the bank :)"
+            )
         return Money(self.amount + other.amount, self.currency)
+
+    def __repr__(self):
+        return f'Money(amount={self.amount}, currency={self.currency})'
 
     @staticmethod
     def dollar(amount):
