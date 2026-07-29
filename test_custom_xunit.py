@@ -1,7 +1,8 @@
 from custom_xunit import WasRun
 
 
-test = WasRun("testMethod")
-print(test.wasRun)
-test.testMethod()
-print(test.wasRun)
+def test_simple():
+    test = WasRun("testMethod")
+    assert test.wasRun is None
+    test.testMethod()
+    assert test.wasRun == 1 
